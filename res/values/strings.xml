@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POPO</string>
+    <string name="menu_detail_logging">詳細</string>
+    <string name="menu_quick_logging">戳</string>
+    <string name="menu_settings">關於</string>
+    <string name="menu_stats">統計</string>
+  	<string name="create">Create a new profile</string>
+    <string name="show">Show current profile</string>
+    <string name="current">Current Profile</string>
+    <string name="use_current">Use current profile</string>
+    <string name="load">Load other profile</string>
+    
+    <string name="profile">Profile</string>
+    <string name="options">Options</string>
+    <string name="name">name</string>
+    <string name="sex">sex</string>
+    <string name="boy">boy</string>
+    <string name="girl">girl</string>
+    <string name="birthday">birthday</string>
+    <string name="height">height</string>
+    <string name="weight">weight</string>
+    <string name="blood_type">blood type</string>
+    <string name="constellations">constellations</string>
+    
+    <string name="msg">Please fill in all fields</string>
+    <string name="insert_ok">Insert the profile successfully</string>
+    
+    <string name="reset">Reset all fields</string>
+    
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    
+    <string name="grid">grid</string>
+    <string name="add">+ Add a record</string>
+    <string name="description">小波在踢</string>
+    
+    <string name="title">Title</string>
+    
+    <string name="msg_delete">Delete?</string>
+    
+    <string name="msg_cancel">Cancel</string>
+    
+    <string name="msg_confirm_del">確定刪除 ?</string>
+    
+    <string name="msg_confirm">Ok</string>
+    
+    <string name="atcion_kick">小波在踢</string>
+    
+    <string name="menu_list">清單</string>
+</resources>

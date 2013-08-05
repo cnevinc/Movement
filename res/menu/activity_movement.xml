@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item
+        android:id="@+id/menu_stats"
+       android:showAsAction="ifRoom"
+        android:title="@string/menu_stats"/>
+
+    <item
+        android:id="@+id/menu_dlog"
+        android:checkable="true"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_detail_logging" />
+      <item
+        android:id="@+id/menu_qlog"
+        android:checkable="true"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_quick_logging" />
+</menu>
