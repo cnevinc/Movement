@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.popo"
+    package="com.bobo"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -27,7 +27,7 @@
         <activity android:name=".CreateRecord" />
         <activity android:name=".RecordStats" />
         
-        <provider android:name="com.popo.core.BabyProvider" android:authorities="com.popo" />
+        <provider android:name="com.bobo.core.BabyProvider" android:authorities="com.bobo" />
     </application>
 
 </manifest>

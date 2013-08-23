@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+<!-- 
      <item
         android:id="@+id/menu_stats"
        android:showAsAction="ifRoom"
         android:title="@string/menu_stats"/>
-
+ -->
     <item
         android:id="@+id/menu_dlog"
         android:checkable="true"
