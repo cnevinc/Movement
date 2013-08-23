@@ -178,7 +178,7 @@ public class CreateRecord extends Activity {
 	        if (resultCode == RESULT_OK) {
 	            // Image captured and saved to fileUri specified in the Intent
 	        	Log.d("nevin"," File saved at " + mFilePathUri + " and returned result");
-	    		mTv1.setText(this.mFilePathUri.toString());
+	    		mTv1.setText(CreateRecord.this.getResources().getString(R.string.msg_file_saved) + this.mFilePathUri.toString());
 	        } else if (resultCode == RESULT_CANCELED) {
 	            // User cancelled the image capture
 	        } else {
