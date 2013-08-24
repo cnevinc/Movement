@@ -240,12 +240,11 @@ public class RecordList extends Activity {
 			Calendar c = Calendar.getInstance();
 			c.setTimeInMillis(rec.time);
 			tv2.setText(mFormat.format(c.getTime()));
-			// Only init thumbnail when photo is not empty
-			Log.d("nevin","This is photo : " + rec.photo_fname	);
-			if (rec.photo_fname!=null && !rec.photo_fname.equals("")){
-				
+			
+			// Only init thumbnail when photo_fname is not empty
+			if (rec.photo_fname!=null && !rec.photo_fname.equals("")){				
 				Uri imgUri=Uri.parse(rec.photo_fname);
-				iv1.setImageURI(imgUri);	
+				iv1.setImageBitmap(Utils.decodeSampleBitmapFromUri(imgUri, 50 , 50));	// decode bitmaps with 50x50 size thumbnail
 			}
 			return convertView;
 		}

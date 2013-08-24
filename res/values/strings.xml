@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">胎動記錄器</string>
+    <string name="app_name">嬰兒記錄器</string>
     <string name="menu_detail_logging">詳細</string>
     <string name="menu_quick_logging">戳</string>
     <string name="menu_settings">關於</string>

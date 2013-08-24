@@ -2,6 +2,7 @@ package com.bobo.core;
 
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,6 +17,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 
 public class Utils {
@@ -115,6 +118,34 @@ public class Utils {
 		cursor.close();
 		cursor = null;
 		return list;
+	}
+	
+	private static int calculateInSampleSize(BitmapFactory.Options options,int requestWidth, int requestHeight){
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+		
+		if (height > requestHeight || width > requestWidth){
+			final int heightRatio = Math.round((float) (height/requestHeight) );
+			final int widthRatio = Math.round((float) (width/requestWidth) );
+			inSampleSize = Math.min(heightRatio, widthRatio);
+		}
+		
+		return inSampleSize;
+	}
+	public static Bitmap decodeSampleBitmapFromUri(Uri uri , int requestHeight , int requestWidth){
+		// First set inJustDecodeBounds to true to retrieve image info instead of allocation actual memory 
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeFile(uri.getPath(),options);
+		
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, requestHeight, requestWidth);
+		
+		// Set inJustDecodeBounds to false and Use BitmapFactory to decode from file file  
+		options.inJustDecodeBounds = false;
+		return 		BitmapFactory.decodeFile(uri.getPath(),options);
 	}
 
 }

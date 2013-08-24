@@ -21,8 +21,11 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -106,7 +109,23 @@ public class CreateRecord extends Activity {
 		});		
 		
 		mTv1 = (TextView)findViewById(R.id.tv_msg);
+		Spinner sp = (Spinner) this.findViewById(R.id.spin_action);
+		ArrayAdapter<String> adapter  = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item ,new String[]{"¿ËÁý ¥k   ¥ª","²~Áý","ºÎÄ±","§¿§¿","¤j«K","Ä_Ä_¦b½ð"});		
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		sp.setAdapter(adapter);
+		sp.setOnItemSelectedListener(new Spinner.OnItemSelectedListener (){
+
+			@Override
+			public void onItemSelected(AdapterView<?> adapterView, View view,
+					int pos, long id) {
+				CreateRecord.this.mEdit.setText(adapterView.getSelectedItem().toString()) ;
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
 				
+			}});
 	}
 
 	@Override
