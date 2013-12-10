@@ -58,12 +58,6 @@ public class RecordList extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent = new Intent();
 		switch (item.getItemId()) {
-//		case R.id.menu_test:
-//			intent.setClass(RecordList.this, RecordStats.class);
-//			intent.putExtra(Record.PID, mPid);
-//			intent.putExtra(Record.CATEGORY, mCat);
-//			startActivity(intent);
-//			return true;
 		case R.id.menu_dlog:
 			intent.setClass(RecordList.this, CreateRecord.class);
 			intent.putExtra(Record.PID, mPid);
@@ -85,7 +79,6 @@ public class RecordList extends Activity {
 			return true;
 		/*
 		 * case R.id.menu_stats:
-		 
 			mListViewStats.setAdapter(
 					(ListAdapter) new SimpleAdapter( 
 							this, 
@@ -134,7 +127,7 @@ public class RecordList extends Activity {
 		
 		// Record List
 		mListView = (ListView) findViewById(R.id.list1);
-		mAdapter = new RecordAdapter(this, null);
+		mAdapter = new RecordAdapter(this, null);		// Initial collection of records when OnResume
 		mListView.setAdapter(mAdapter);
 
 		// listener
@@ -143,22 +136,23 @@ public class RecordList extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
 					long id) {
-				ImageView iv1 = (ImageView)arg1.findViewById(R.id.imageView1);		
-				AlertDialog.Builder adb=new AlertDialog.Builder(RecordList.this);
-				adb.setTitle("Open File");
-				adb.setMessage(R.string.msg_open_photo);
-				adb.setNegativeButton(R.string.msg_cancel, null);
-				adb.setPositiveButton(R.string.msg_confirm, new AlertDialog.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Uri imageUri = Uri.parse(mRecordList.get(position).photo_fname);
-
-						Log.d("nevin","Opening ["+which + "] to gallery :"+imageUri.toString());
-						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setDataAndType(imageUri, "image/*");
-						startActivity(intent);
-					}});
-				adb.show();			
+				String fileUri = mRecordList.get(position).photo_fname;
+				if (fileUri!=null){
+					AlertDialog.Builder adb=new AlertDialog.Builder(RecordList.this);
+					adb.setTitle("Open File");
+					adb.setMessage(R.string.msg_open_photo);
+					adb.setNegativeButton(R.string.msg_cancel, null);
+					adb.setPositiveButton(R.string.msg_confirm, new AlertDialog.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							String fileUri = mRecordList.get(position).photo_fname;
+							Uri imageUri = Uri.parse(fileUri);
+							Intent intent = new Intent(Intent.ACTION_VIEW);
+							intent.setDataAndType(imageUri, "image/*");
+							startActivity(intent);
+						}});
+					adb.show();		
+				}
 				
 			}
 			
@@ -191,6 +185,7 @@ public class RecordList extends Activity {
 		mAdapter.updateList(Utils.getRecordListByCat(this,  mCat));
 		mAdapter.notifyDataSetChanged();
 	}
+	
 	class RecordAdapter extends BaseAdapter {
 
 		Context mContext;
@@ -218,13 +213,13 @@ public class RecordList extends Activity {
 		public Object getItem(int position) {
 			if (mRecordList == null) {
 				return null;
-			}
+			} 
 			return mRecordList.get(position);
 		}
 
 		public long getItemId(int position) {
 			return position;
-		}
+		} 
 
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if (convertView == null) {
@@ -241,17 +236,17 @@ public class RecordList extends Activity {
 			c.setTimeInMillis(rec.time);
 			tv2.setText(mFormat.format(c.getTime()));
 			
-			// Only init thumbnail when photo_fname is not empty
+			// Only initial humbnail when photo_fname is not empty
 			if (rec.photo_fname!=null && !rec.photo_fname.equals("")){				
 				Uri imgUri=Uri.parse(rec.photo_fname);
 				iv1.setImageBitmap(Utils.decodeSampleBitmapFromUri(imgUri, 50 , 50));	// decode bitmaps with 50x50 size thumbnail
+			}else{
+				// If no photo, clear the image
+				iv1.setImageBitmap(null);
 			}
 			return convertView;
 		}
 		
-		public void onExpandPhoto(int position){
-			
-		}
 	}
 
 }

@@ -76,7 +76,8 @@ public class CreateRecord extends Activity {
 				rec.pid = mPid; 
 				rec.category = mCat;
 				rec.action = mEdit.getText().toString();
-				rec.photo_fname = mFilePathUri.toString();
+				if(mFilePathUri!=null )
+					rec.photo_fname = mFilePathUri.toString();
 				if (rec.action.equals("")) rec.action=CreateRecord.this.getResources().getString(R.string.atcion_kick);
 				rec.time = mTime.getTimeInMillis();
 				Utils.insertRecord(CreateRecord.this, rec);

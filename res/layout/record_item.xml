@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@android:drawable/btn_dialog" />
+         />
 
     <TextView
         android:id="@+id/tv1"
