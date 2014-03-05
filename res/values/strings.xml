@@ -1,60 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">嬰兒記錄器</string>
-    <string name="menu_detail_logging">詳細</string>
-    <string name="menu_quick_logging">戳</string>
-    <string name="menu_settings">關於</string>
-    <string name="menu_stats">統計</string>
-  	<string name="create">Create a new profile</string>
-    <string name="show">Show current profile</string>
-    <string name="current">Current Profile</string>
-    <string name="use_current">Use current profile</string>
-    <string name="load">Load other profile</string>
-    
-    <string name="profile">Profile</string>
-    <string name="options">Options</string>
-    <string name="name">name</string>
-    <string name="sex">sex</string>
-    <string name="boy">boy</string>
-    <string name="girl">girl</string>
-    <string name="birthday">birthday</string>
-    <string name="height">height</string>
-    <string name="weight">weight</string>
-    <string name="blood_type">blood type</string>
-    <string name="constellations">constellations</string>
-    
-    <string name="msg">Please fill in all fields</string>
-    <string name="insert_ok">Insert the profile successfully</string>
-    
-    <string name="reset">Reset all fields</string>
-    
-    <string name="save">Save</string>
-    <string name="cancel">Cancel</string>
-    
-    <string name="grid">grid</string>
-    <string name="add">+ Add a record</string>
-    <string name="description">寶寶在踢</string>
-    
-    <string name="title">Title</string>
-    
-    <string name="msg_delete">刪除這筆記錄?</string>
-    <string name="msg_open_photo">開啟這張圖片嗎?</string>
-    <string name="msg_file_saved">檔案已儲存在:</string>
-    
-    <string name="msg_cancel">取消</string>
-    
-    <string name="msg_confirm_del">確定刪除 ?</string>
-    
-    <string name="msg_confirm">確定</string>
-    
-    <string name="atcion_kick">寶寶在踢</string>
-    
-    <string name="menu_list">清單</string>
-    
+    <string name="app_name">Baby Recorder</string>
+    <string name="menu_detail_logging">Log</string>
+    <string name="menu_quick_logging">Tag</string>
+    <string name="menu_settings">Setting</string>
+    <string name="menu_stats">Statistic</string>
+    <string name="msg_delete">Sure to delete?</string>
+    <string name="msg_open_photo">Open this picture?</string>
+    <string name="msg_file_saved">File Exist!</string>
+    <string name="msg_cancel">Cancel</string>
+    <string name="msg_confirm_del">Sure to cancel?</string>
+    <string name="msg_confirm">Yes</string>
+    <string name="atcion_default">is kicking!</string>
+    <string name="atcion_list">is sleeping.breast feeding</string>
+    <string name="menu_list">List</string>
     <string name="take_pictures">Take Pictures</string>
-    
     <string name="msg_message"></string>
-    
     <string name="msg_click_clock"></string>
+
 </resources>

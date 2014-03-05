@@ -74,7 +74,7 @@ public class Utils {
 				Record.RECORD_URI,
 				null,
 				 Record.CATEGORY + " = ?",
-				new String[] {	Integer.toString(category) }, Record.TIME);
+				new String[] {	Integer.toString(category) }, Record.TIME+ " DESC");
 		if (cursor != null) {
 			while (cursor.moveToNext()) {
 				Record rec = new Record();

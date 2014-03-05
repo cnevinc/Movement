@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bobo"
-    android:versionCode="6"
-    android:versionName="6.0" >
+    android:versionCode="10"
+    android:versionName="1.10" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".RecordList"
+            android:name=".Act_RecordList"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateRecord" />
-        <activity android:name=".RecordStats" />
-        
-        <provider android:name="com.bobo.core.BabyProvider" android:authorities="com.bobo" />
+        <activity android:name=".Act_CreateRecord" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Act_RecordList" />
+        </activity>
+        <activity android:name=".Act_Setting" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Act_RecordList" />
+        </activity>
+
+        <provider
+            android:name="com.bobo.core.BabyProvider"
+            android:authorities="com.bobo" />
     </application>
 
 </manifest>

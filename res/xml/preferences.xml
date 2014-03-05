@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Basic Setup" >
+        <EditTextPreference
+            android:inputType="text"
+            android:key="baby_name"
+            android:summary="Your baby's name (Ex. Bobo)"
+            android:title="Baby&apos;s Name" />
+        <EditTextPreference
+            android:inputType="text"
+            android:key="default_action"
+            android:summary="Default action to use in quick log. (Ex. is kicking, is sleeping)"
+            android:title="Default action" />
+    <!--    <EditTextPreference
+            android:inputType="number"
+            android:key="archive_threshold"
+            android:summary="Log After this date will not be displayed on screen. Un-chekc this option to display."
+            android:title="Archive After N Days" />
+     -->   <EditTextPreference
+            android:inputType="text"
+            android:key="action_list"
+            android:summary="Setup the actions in the drop down list, seperate by comma(,) "
+            android:title="Action List" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="archive_threshold"
+            android:summary="Log After this date will not be displayed on screen. Un-chekc this option to display."
+            android:title="Archive After N Days" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="About" >
+        <Preference
+            android:key="version"
+            android:selectable="false"
+            android:summary="0.1.10.20140305"
+            android:title="Version Info" />
+        <Preference
+            android:key="cnevinc"
+            android:summary="Check out my latest App!"
+            android:title="Recommended Apps" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/developer?id=cnevinc" />
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

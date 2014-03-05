@@ -15,4 +15,9 @@
         android:checkable="true"
         android:showAsAction="ifRoom"
         android:title="@string/menu_quick_logging" />
+       <item
+        android:id="@+id/menu_setting"
+        android:checkable="true"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_settings" />
 </menu>

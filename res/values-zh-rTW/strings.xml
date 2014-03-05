@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">嬰兒記錄器</string>
+    <string name="menu_detail_logging">詳細</string>
+    <string name="menu_quick_logging">戳</string>
+    <string name="menu_settings">設定</string>
+    <string name="menu_stats">統計</string>
+    <string name="msg_delete">刪除這筆記錄?</string>
+    <string name="msg_open_photo">開啟這張圖片嗎?</string>
+    <string name="msg_file_saved">檔案已儲存在:</string>
+    <string name="msg_cancel">取消</string>
+    <string name="msg_confirm_del">確定刪除 ?</string>
+    <string name="msg_confirm">確定</string>
+    <string name="atcion_default">踢了一下</string>
+    <string name="atcion_list">踢了一下.睡著了.尿尿.吃ㄋㄟㄋㄟ</string>
+    <string name="menu_list">清單</string>
+    <string name="take_pictures">照相</string>
+    <string name="msg_message"></string>
+    <string name="msg_click_clock"></string>
+
+</resources>
